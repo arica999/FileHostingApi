@@ -1,10 +1,11 @@
+
 using FileHostingApi.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace FileHostingApi.Services
 {
-    public class FileMetadataService
+    public class FileMetadataService : IFileMetadataService
     {
         private readonly IMongoCollection<FileMetadata>? _fileMetadata;
         private static readonly List<FileMetadata> _inMemory = new List<FileMetadata>();

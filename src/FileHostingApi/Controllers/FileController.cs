@@ -8,10 +8,10 @@ namespace FileHostingApi.Controllers
     [Route("api/[controller]")]
     public class FileController : ControllerBase
     {
-        private readonly FileMetadataService _fileMetadataService;
+        private readonly IFileMetadataService _fileMetadataService;
         private readonly string _storagePath = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
 
-        public FileController(FileMetadataService fileMetadataService)
+        public FileController(IFileMetadataService fileMetadataService)
         {
             _fileMetadataService = fileMetadataService;
             if (!Directory.Exists(_storagePath))

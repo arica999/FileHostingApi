@@ -1,9 +1,4 @@
 using FileHostingApi.Services;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace FileHostingApi
 {
@@ -19,7 +14,7 @@ namespace FileHostingApi
         {
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddSingleton<FileMetadataService>();
+            services.AddSingleton<IFileMetadataService, FileMetadataService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
