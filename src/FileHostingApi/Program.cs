@@ -2,7 +2,7 @@ using FileHostingApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Rejestracja serwisów i kontrolerów
+// Services and controllers
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -14,9 +14,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
 
-app.UseHttpsRedirection();
+// Disabled HTTPS redirection for test host stability
+// app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 

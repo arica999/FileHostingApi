@@ -7,6 +7,6 @@ namespace FileHostingApi.Controllers
     public class HealthController : ControllerBase
     {
         [HttpGet]
-        public IActionResult Get() => Ok("API działa poprawnie");
+        public IActionResult Get() => Ok("API works");
     }
 }
